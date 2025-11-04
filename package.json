@@ -1,6 +1,6 @@
 {
   "name": "pwa-workout-tracker",
-  "homepage": "https://sawyer92.github.io/pwa-workout-tracker/",
+  "homepage": "https://sawyer92.github.io/pwa-workout-tracker",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
