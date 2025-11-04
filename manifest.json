@@ -15,7 +15,9 @@
   ],
   "start_url": ".",
   "display": "standalone",
+  "orientation": "portrait",
   "theme_color": "#2563eb",
   "background_color": "#ffffff",
-  "description": "Gestisci i tuoi allenamenti in palestra"
+  "description": "Gestisci i tuoi allenamenti in palestra",
+  "categories": ["health", "fitness", "lifestyle"]
 }
