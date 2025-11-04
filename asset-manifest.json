@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/gym-workout-app/static/css/main.89fb7a0a.css",
-    "main.js": "/gym-workout-app/static/js/main.bcccff0b.js",
-    "static/js/453.e1b7a635.chunk.js": "/gym-workout-app/static/js/453.e1b7a635.chunk.js",
-    "index.html": "/gym-workout-app/index.html",
-    "main.89fb7a0a.css.map": "/gym-workout-app/static/css/main.89fb7a0a.css.map",
-    "main.bcccff0b.js.map": "/gym-workout-app/static/js/main.bcccff0b.js.map",
-    "453.e1b7a635.chunk.js.map": "/gym-workout-app/static/js/453.e1b7a635.chunk.js.map"
+    "main.css": "/pwa-workout-tracker/static/css/main.89fb7a0a.css",
+    "main.js": "/pwa-workout-tracker/static/js/main.e1dde0f7.js",
+    "static/js/453.e1b7a635.chunk.js": "/pwa-workout-tracker/static/js/453.e1b7a635.chunk.js",
+    "index.html": "/pwa-workout-tracker/index.html",
+    "main.89fb7a0a.css.map": "/pwa-workout-tracker/static/css/main.89fb7a0a.css.map",
+    "main.e1dde0f7.js.map": "/pwa-workout-tracker/static/js/main.e1dde0f7.js.map",
+    "453.e1b7a635.chunk.js.map": "/pwa-workout-tracker/static/js/453.e1b7a635.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.89fb7a0a.css",
-    "static/js/main.bcccff0b.js"
+    "static/js/main.e1dde0f7.js"
   ]
 }
