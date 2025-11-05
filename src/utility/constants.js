@@ -1,4 +1,4 @@
-const initialWorkouts = [
+export const dummyData = [
   {
     id: '1',
     name: 'Allenamento Petto e Tricipiti',

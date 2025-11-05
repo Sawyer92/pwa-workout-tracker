@@ -1,3 +1,6 @@
+import  { useState } from 'react';
+import {  Plus, ChevronLeft, Trash2 } from 'lucide-react';
+
 const CreateWorkoutScreen = ({ setCurrentScreen, addWorkout }) => {
   const [name, setName] = useState('');
   const [duration, setDuration] = useState('60');

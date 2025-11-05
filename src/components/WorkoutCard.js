@@ -1,3 +1,5 @@
+import { Star, Dumbbell } from 'lucide-react';
+
 const WorkoutCard = ({ workout, onClick }) => {
   return (
     <div

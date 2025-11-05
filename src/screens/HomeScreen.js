@@ -1,3 +1,7 @@
+import WorkoutCard from '../components/WorkoutCard';
+import { Plus } from 'lucide-react';
+
+
 const HomeScreen = ({ workouts, setCurrentScreen, setSelectedWorkout }) => {
   const activeWorkouts = workouts.filter(w => w.status === 'active');
   const pendingWorkouts = workouts.filter(w => w.status === 'pending');

@@ -1,3 +1,5 @@
+import { Home, FileText, Search, User } from 'lucide-react';
+
 const BottomNavigation = ({ activeTab, setActiveTab }) => {
   const tabs = [
     { id: 'home', icon: Home, label: 'Home' },

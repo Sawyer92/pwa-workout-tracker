@@ -1,3 +1,5 @@
+import {  Star } from 'lucide-react';
+
 const HistoryScreen = ({ workouts, setCurrentScreen, setSelectedWorkout }) => {
   const completedWorkouts = workouts.filter(w => w.status === 'completed');
 

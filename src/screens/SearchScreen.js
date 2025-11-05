@@ -1,3 +1,5 @@
+import  { useState } from 'react';
+
 const SearchScreen = ({ workouts, setCurrentScreen, setSelectedWorkout, setSelectedExercise }) => {
   const [searchTerm, setSearchTerm] = useState('');
 

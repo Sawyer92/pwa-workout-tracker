@@ -1,4 +1,5 @@
-// Screen: ExerciseDetailScreen
+import {  Edit2, Star, ChevronLeft } from 'lucide-react';
+
 const ExerciseDetailScreen = ({ exercise, workout, setCurrentScreen, toggleFavorite, setEditMode }) => {
   return (
     <div className="pb-20">

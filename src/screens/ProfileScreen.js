@@ -1,4 +1,7 @@
-const ProfileScreen = () => {
+import { User } from 'lucide-react';
+
+
+const ProfileScreen = ({ workouts }) => {
   return (
     <div className="pb-20 p-4">
       <h1 className="text-3xl font-bold text-gray-800 mb-6">Profilo</h1>
