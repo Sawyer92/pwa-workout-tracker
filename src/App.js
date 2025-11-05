@@ -9,7 +9,6 @@ import ProfileScreen from '../src/screens/ProfileScreen';
 import CreateWorkoutScreen from './screens/CreateWorkoutScreen';
 import { dummyData } from './utility/constants';
 
-
 // Utility per storage persistente
 const usePersistedState = (key, defaultValue) => {
   const [state, setState] = useState(() => {
@@ -37,6 +36,7 @@ const initialWorkouts = dummyData;
 
 // Main App Component
 const App = () => {
+  
   const [workouts, setWorkouts] = usePersistedState('workouts', initialWorkouts);
   const [activeTab, setActiveTab] = useState('home');
   const [currentScreen, setCurrentScreen] = useState('home');
@@ -134,7 +134,7 @@ const deleteExerciseFromWorkout = (workoutId, exerciseId) => {
         return <HomeScreen workouts={workouts} setCurrentScreen={setCurrentScreen} setSelectedWorkout={setSelectedWorkout} />;
     }
   };
-
+  
   return (
     <div className="min-h-screen bg-gray-50">
       {renderScreen()}

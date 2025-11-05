@@ -2,7 +2,7 @@ export const dummyData = [
   {
     id: '1',
     name: 'Allenamento Petto, Spalle e Tricipiti',
-    status: 'active',
+    status: 'pending',
     muscleGroups: ['Petto', 'Spalle','Tricipiti'],
     duration: 60,
     favorite: false,
@@ -39,7 +39,7 @@ export const dummyData = [
    {
     id: '3',
     name: 'Allenamento Dorso e Bicipiti',
-    status: 'pending',
+    status: 'active',
     muscleGroups: ['Dorso', 'Spalle', 'Bicipiti'],
     duration: 75,
     favorite: true,
