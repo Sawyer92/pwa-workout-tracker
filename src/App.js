@@ -42,6 +42,7 @@ const App = () => {
   const [currentScreen, setCurrentScreen] = useState('home');
   const [selectedWorkout, setSelectedWorkout] = useState(null);
   const [selectedExercise, setSelectedExercise] = useState(null);
+  const [editMode, setEditMode] = useState(false);
 
   const toggleFavorite = (workoutId) => {
     setWorkouts(workouts.map(w =>
@@ -63,14 +64,64 @@ const App = () => {
     else if (activeTab === 'profile') setCurrentScreen('profile');
   }, [activeTab]);
 
+  const updateWorkout = (updatedWorkout) => {
+  setWorkouts(workouts.map(w => 
+    w.id === updatedWorkout.id ? updatedWorkout : w
+  ));
+  setSelectedWorkout(updatedWorkout);
+};
+
+const deleteWorkout = (workoutId) => {
+  setWorkouts(workouts.filter(w => w.id !== workoutId));
+};
+
+const updateExerciseInWorkout = (workoutId, exerciseId, updatedExercise) => {
+  const updatedWorkouts = workouts.map(workout => {
+    if (workout.id === workoutId) {
+      return {
+        ...workout,
+        exercises: workout.exercises.map(ex => 
+          ex.id === exerciseId ? updatedExercise : ex
+        )
+      };
+    }
+    return workout;
+  });
+  
+  setWorkouts(updatedWorkouts);
+  
+  // Aggiorna anche il workout selezionato
+  const updatedWorkout = updatedWorkouts.find(w => w.id === workoutId);
+  setSelectedWorkout(updatedWorkout);
+  setSelectedExercise(updatedExercise);
+};
+
+const deleteExerciseFromWorkout = (workoutId, exerciseId) => {
+  const updatedWorkouts = workouts.map(workout => {
+    if (workout.id === workoutId) {
+      return {
+        ...workout,
+        exercises: workout.exercises.filter(ex => ex.id !== exerciseId)
+      };
+    }
+    return workout;
+  });
+  
+  setWorkouts(updatedWorkouts);
+  
+  // Aggiorna anche il workout selezionato
+  const updatedWorkout = updatedWorkouts.find(w => w.id === workoutId);
+  setSelectedWorkout(updatedWorkout);
+};
+
   const renderScreen = () => {
     switch (currentScreen) {
       case 'home':
         return <HomeScreen workouts={workouts} setCurrentScreen={setCurrentScreen} setSelectedWorkout={setSelectedWorkout} />;
       case 'detail':
-        return <WorkoutDetailScreen workout={selectedWorkout} setCurrentScreen={setCurrentScreen} setSelectedExercise={setSelectedExercise} toggleFavorite={toggleFavorite} />;
+        return <WorkoutDetailScreen workout={selectedWorkout} setCurrentScreen={setCurrentScreen} setSelectedExercise={setSelectedExercise} toggleFavorite={toggleFavorite} setEditMode={setEditMode} updateWorkout={updateWorkout} deleteWorkout={deleteWorkout}/>;
       case 'exercise':
-        return <ExerciseDetailScreen exercise={selectedExercise} workout={selectedWorkout} setCurrentScreen={setCurrentScreen} toggleFavorite={toggleFavorite} />;
+        return <ExerciseDetailScreen exercise={selectedExercise} workout={selectedWorkout} setCurrentScreen={setCurrentScreen} toggleFavorite={toggleFavorite} setEditMode={setEditMode} updateExerciseInWorkout={updateExerciseInWorkout} deleteExerciseFromWorkout={deleteExerciseFromWorkout}/>;
       case 'search':
         return <SearchScreen workouts={workouts} setCurrentScreen={setCurrentScreen} setSelectedWorkout={setSelectedWorkout} setSelectedExercise={setSelectedExercise} />;
       case 'history':

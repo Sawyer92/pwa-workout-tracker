@@ -1,10 +1,11 @@
 import  { useState } from 'react';
 import {  Plus, ChevronLeft, Trash2 } from 'lucide-react';
+import MuscleGroupSelector from '../components/MuscleGroupSelector';
 
 const CreateWorkoutScreen = ({ setCurrentScreen, addWorkout }) => {
   const [name, setName] = useState('');
   const [duration, setDuration] = useState('60');
-  const [muscleGroups, setMuscleGroups] = useState('');
+  const [muscleGroups, setMuscleGroups] = useState([]);
   const [exercises, setExercises] = useState([
     { name: '', sets: '3', reps: '10', weight: '0', description: '' }
   ]);
@@ -39,7 +40,7 @@ const CreateWorkoutScreen = ({ setCurrentScreen, addWorkout }) => {
       id: Date.now().toString(),
       name: name.trim(),
       status: 'pending',
-      muscleGroups: muscleGroups.split(',').map(g => g.trim()).filter(g => g),
+      muscleGroups: muscleGroups,
       duration: parseInt(duration) || 60,
       favorite: false,
       exercises: validExercises.map((e, idx) => ({
@@ -89,16 +90,11 @@ const CreateWorkoutScreen = ({ setCurrentScreen, addWorkout }) => {
           />
         </div>
 
-        <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">Gruppi Muscolari (separati da virgola)</label>
-          <input
-            type="text"
-            value={muscleGroups}
-            onChange={(e) => setMuscleGroups(e.target.value)}
-            placeholder="Es. Petto, Tricipiti"
-            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
-          />
-        </div>
+        <MuscleGroupSelector
+          selectedGroups={muscleGroups}
+          setSelectedGroups={setMuscleGroups}
+        />
+
 
         <div>
           <div className="flex justify-between items-center mb-3">

@@ -1,15 +1,22 @@
 export const dummyData = [
   {
     id: '1',
-    name: 'Allenamento Petto e Tricipiti',
+    name: 'Allenamento Petto, Spalle e Tricipiti',
     status: 'active',
-    muscleGroups: ['Petto', 'Tricipiti'],
+    muscleGroups: ['Petto', 'Spalle','Tricipiti'],
     duration: 60,
     favorite: false,
     exercises: [
-      { id: 'e1', name: 'Panca piana', sets: 4, reps: 10, weight: 80, description: 'Sdraiati sulla panca, afferra il bilanciere con presa leggermente più ampia delle spalle. Abbassa il bilanciere al petto e spingi verso l\'alto.' },
-      { id: 'e2', name: 'Croci manubri', sets: 3, reps: 12, weight: 20, description: 'Sdraiati sulla panca con manubri. Apri le braccia lateralmente mantenendo una leggera flessione ai gomiti, poi richiudi.' },
-      { id: 'e3', name: 'French press', sets: 3, reps: 12, weight: 30, description: 'Sdraiati sulla panca, porta il bilanciere sopra la testa. Piega i gomiti portando il peso verso la fronte, poi estendi.' }
+      { id: 'e1', name: 'Panca Piana', sets: 3, reps: 12, weight: 12, description: 'Partire da 12kg e progredire di 2kg alla volta fino a 16kg.' },
+      { id: 'e2', name: 'Panca a 45°', sets: 3, reps: 12, weight: 14, description: 'Partire da 14kg e progredire di 2kg alla volta fino a 18kg.' },
+      { id: 'e3', name: 'Chest Press', sets: 3, reps: 12, weight: 12.5, description: 'Partire da 12,5kg per lato e progredire di 2,5kg alla volta.' },
+      { id: 'e4', name: 'Lento Manubri', sets: 3, reps: 12, weight: 10, description: 'Partire da 10kg e progredire di 2kg alla volta fino a 14kg.' },
+      { id: 'e5', name: 'Alzate Frontali', sets: 3, reps: 12, weight: 6, description: 'Partire da 6kg e progredire di 2kg alla volta fino a 10kg.' },
+      { id: 'e6', name: 'Alzate Laterali', sets: 3, reps: 12, weight: 8, description: 'Partire da 8kg e progredire di 2kg alla volta fino a 12kg.' },
+      { id: 'e7', name: 'Croci ai cavi', sets: 3, reps: 12, weight: 10, description: 'Partire da 10kg e aumentare fino a 15kg.' },
+      { id: 'e8', name: 'Parallele', sets: 3, reps: 12, weight: 30, description: 'Partire da 30kg e scendere fino a 20kg.' },
+      { id: 'e9', name: 'Tricipiti ai cavi alti', sets: 4, reps: 12, weight: 20, description: 'Partire da 20kg e progredire fino a 30-35kg.' }
+
     ]
   },
   {
@@ -20,8 +27,31 @@ export const dummyData = [
     duration: 75,
     favorite: true,
     exercises: [
-      { id: 'e4', name: 'Squat', sets: 5, reps: 8, weight: 100, description: 'Posiziona il bilanciere sulle spalle. Scendi piegando le ginocchia fino a 90 gradi, mantieni la schiena dritta.' },
-      { id: 'e5', name: 'Leg press', sets: 4, reps: 12, weight: 150, description: 'Siediti sulla leg press, posiziona i piedi sulla pedana. Spingi con forza estendendo le gambe.' }
+      { id: 'e10', name: 'Squat', sets: 3, reps: 12, weight: 20, description: 'Partire da 20kg e aumentare di 2,5kg per lato' },
+      { id: 'e11', name: 'Leg press', sets: 3, reps: 12, weight: 130, description: 'Partenza da 130kg (65 per gamba) e incrementare di 10kg per gamba a set' },
+      { id: 'e12', name: 'Leg extension', sets: 3, reps: 12, weight: 40, description: 'Partenza da 40kg e incrementare di 10kg a set' },
+      { id: 'e13', name: 'Affondo con manubri', sets: 3, reps: 12, weight: 8, description: 'Partenza da 8kg e incrementare di 2kg a set' },
+      { id: 'e14', name: 'Leg curl', sets: 3, reps: 12, weight: 20, description: 'Partenza da 20kg e incrementare di 5kg a set' },
+      { id: 'e15', name: 'Polpacci', sets: 4, reps: 12, weight: 80, description: 'Partenza da 80kg e incrementare di 10kg per gamba a set' },
+    
+    ]
+  },
+   {
+    id: '3',
+    name: 'Allenamento Dorso e Bicipiti',
+    status: 'pending',
+    muscleGroups: ['Dorso', 'Spalle', 'Bicipiti'],
+    duration: 75,
+    favorite: true,
+    exercises: [
+      { id: 'e16', name: 'Lat Machine', sets: 3, reps: 12, weight: 7.5, description: 'Partire da 7.5kg per lato e aumentare di 2,5kg per lato' },
+      { id: 'e17', name: 'Pulley', sets: 3, reps: 12, weight: 35, description: 'Partenza da 35kg e incrementare di 10kg' },
+      { id: 'e18', name: 'Low-Row', sets: 3, reps: 12, weight: 20, description: 'Partenza da 20kg e incrementare di 5kg per lato a set' },
+      { id: 'e19', name: 'Curl Manubri', sets: 3, reps: 12, weight: 10, description: 'Partenza da 10kg e incrementare di 2kg a set' },
+      { id: 'e20', name: 'Curl ai Cavi', sets: 3, reps: 12, weight: 20, description: 'Partenza da 20kg e incrementare di 5kg a set' },
+      { id: 'e21', name: 'Curl Martello', sets: 3, reps: 12, weight: 10, description: 'Partenza da 10kg e incrementare di 2kg a set' },
+      { id: 'e22', name: 'Pec Fly', sets: 3, reps: 12, weight: 15, description: 'Partenza da 15kg e incrementare di 5kg a set' },
+      
     ]
   }
 ];
