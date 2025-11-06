@@ -74,12 +74,7 @@ const WorkoutDetailScreen = ({
     }
   }, [elapsedTime, completedExercises, isTimerRunning]);
 
-  const formatTime = (seconds) => {
-    const hrs = Math.floor(seconds / 3600);
-    const mins = Math.floor((seconds % 3600) / 60);
-    const secs = seconds % 60;
-    return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-  };
+
 
   const handleStartWorkout = () => {
     setIsTimerRunning(true);
@@ -93,9 +88,17 @@ const WorkoutDetailScreen = ({
     updateWorkout(updatedWorkout);
   };
 
-  const handlePauseWorkout = () => {
-    setIsPaused(!isPaused);
-  };
+  const formatTime = (seconds) => {
+        const hrs = Math.floor(seconds / 3600);
+        const mins = Math.floor((seconds % 3600) / 60);
+        const secs = seconds % 60;
+        return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    };
+
+    const handlePauseWorkout = () => {
+        setIsPaused(!isPaused);
+    };
+
 
   const checkAllExercisesCompleted = () => {
     return completedExercises.length > 0 && completedExercises.every(completed => completed)
@@ -107,7 +110,7 @@ const WorkoutDetailScreen = ({
       setElapsedTime(0);
       var check = checkAllExercisesCompleted(); 
       var status = ''
-      if (check == true) {
+      if (check === true) {
         status='completed'
       }else {
         status='pending'

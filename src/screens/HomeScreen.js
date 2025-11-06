@@ -33,6 +33,12 @@ const HomeScreen = ({ workouts, setCurrentScreen, setSelectedWorkout }) => {
     <div className="pb-20 pt-4">
       <div className="px-4 mb-6 flex justify-between items-center">
         <h1 className="text-3xl font-bold text-gray-800">I Miei Allenamenti</h1>
+      </div>
+
+      <WorkoutSection title="In Corso" workouts={activeWorkouts} />
+      <WorkoutSection title="In Sospeso" workouts={pendingWorkouts} />
+      <WorkoutSection title="Completati" workouts={completedWorkouts} />
+      <div className='m-3 absolute right-2'>
         <button
           onClick={() => setCurrentScreen('create')}
           className="bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors"
@@ -40,10 +46,7 @@ const HomeScreen = ({ workouts, setCurrentScreen, setSelectedWorkout }) => {
           <Plus size={24} />
         </button>
       </div>
-
-      <WorkoutSection title="In Corso" workouts={activeWorkouts} />
-      <WorkoutSection title="In Sospeso" workouts={pendingWorkouts} />
-      <WorkoutSection title="Completati" workouts={completedWorkouts} />
+      
     </div>
   );
 };
